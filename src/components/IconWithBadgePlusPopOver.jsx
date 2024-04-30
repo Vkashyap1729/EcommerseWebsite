@@ -2,7 +2,7 @@ import { Badge,Popover, Typography} from '@mui/material'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined' 
 import { useState } from 'react'
 
-export default function BasicPopover() {
+export default function IconWithBadgePlusPopOver() {
   const [anchorEl, setAnchorEl] = useState(null)
 
   const handleClick = (event) => {
