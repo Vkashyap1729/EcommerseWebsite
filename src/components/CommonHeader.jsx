@@ -1,15 +1,11 @@
-import { Stack,TextField,Tabs,Tab ,Badge} from "@mui/material"
+import { Stack,TextField ,Badge} from "@mui/material"
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
-import { useState } from "react"
 import IconWithBadgePlusPopOver from './IconWithBadgePlusPopOver'
+import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined'
 const CommonHeader = () => {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  
   return (
     <Stack
       direction={'row'}
@@ -19,15 +15,13 @@ const CommonHeader = () => {
         height: '48px',
       }}
     >
-      <Tabs value={value} onChange={handleChange}>
-        <Tab label="Home" />
-        <Tab label="Contact" />
-        <Tab label="About" />
-        <Tab label="Sign Up" />
-      </Tabs>
-      <Stack direction={'row'} alignItems={'center'} justifyContent={'space-between'} sx={{
-      }}> 
-        <IconWithBadgePlusPopOver/>
+      
+      <Stack
+        direction={'row'}
+        alignItems={'center'}
+        justifyContent={'space-between'}
+        sx={{}}
+      >
         <TextField
           variant="outlined"
           size="small"
@@ -36,12 +30,14 @@ const CommonHeader = () => {
             endAdornment: <SearchOutlinedIcon />,
           }}
         />
+        <IconWithBadgePlusPopOver />
         <Badge badgeContent={4} color="secondary">
           <FavoriteBorderOutlinedIcon />
         </Badge>
         <Badge badgeContent={4} color="success">
           <ShoppingCartOutlinedIcon />
         </Badge>
+        <PermIdentityOutlinedIcon />
       </Stack>
     </Stack>
   )

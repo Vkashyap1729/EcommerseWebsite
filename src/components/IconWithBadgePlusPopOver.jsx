@@ -1,4 +1,4 @@
-import { Badge,Popover, Typography} from '@mui/material'
+import { Badge,Popover,Alert,Stack} from '@mui/material'
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined' 
 import { useState } from 'react'
 
@@ -17,7 +17,7 @@ export default function IconWithBadgePlusPopOver() {
   const id = open ? 'simple-popover' : undefined
 
   return (
-    <div>
+    <>
       <Badge
         badgeContent={4}
         color="warning"
@@ -40,8 +40,18 @@ export default function IconWithBadgePlusPopOver() {
           horizontal: 'center',
         }}
       >
-        <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+        <Stack 
+          spacing={1} 
+          sx={{
+            p : 1,
+          }}
+        >
+          <Alert severity="success">This is a success Alert.</Alert>
+          <Alert severity="info">This is an info Alert.</Alert>
+          <Alert severity="warning">This is a warning Alert.</Alert>
+          <Alert severity="error">This is an error Alert.</Alert>
+        </Stack>
       </Popover>
-    </div>
+    </>
   )
 }
